@@ -1,0 +1,17 @@
+1.Input Processing:
+•	The algorithm begins by reading input data, including the number of ladders and their corresponding start and end positions, as well as the number of snakes and their respective head and tail positions.
+•	Each ladder and snake information are stored in dictionaries for efficient lookup during the algorithm's execution.
+2.Breadth-First Search with Enhanced Heuristic:
+•	The BFS algorithm is employed to simulate the movement on the game board. A queue containing tuples of the form (position, path) is initialized, where position represents the current position, and path records the sequence of positions visited.
+•	The BFS approach is enhanced by considering a heuristic that combines the actual distance travelled with a heuristic estimate. This heuristic value guides the search towards the goal more efficiently.
+3.Optimizations for Ladders and Snakes:
+•	During each iteration of BFS, the algorithm simulates rolling a die and calculates the new position.
+•	If the new position corresponds to the goal (position 100), the algorithm terminates, and the optimal path is displayed.
+•	If the new position is valid and unvisited, the algorithm updates the visited status and the path history. It also adjusts the queue to consider ladder or snake effects if present at the new position.
+4.Efficient Path Tracking:
+•	The algorithm maintains a visited list to avoid redundant visits and loops.
+•	Each iteration optimizes path creation by appending the current position to the existing path, minimizing memory usage, and enhancing efficiency.
+5.Output and Result:
+•	Once the algorithm completes, it either displays the minimum number of moves required to reach the goal or prints -1 if the goal is not reachable.
+•	The final output showcases the algorithm's success in finding the optimal solution to the Snakes and Ladders puzzle.
+
