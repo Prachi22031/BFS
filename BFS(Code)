@@ -1,0 +1,32 @@
+#BFS Traversal
+
+#adjacency list
+graph = {
+  '1' : ['2', '6'],
+  '2' : ['1','3','4'],
+  '3' : ['2'],
+  '4' : ['2','5'],
+  '5' : ['4','7'],
+  '6' : ['1','7','8'],
+  '7' : ['5','6'],
+  '8' : ['6'],
+}
+
+visited = []  #Tells which nodes already visited
+queue = []    # follows fifo
+
+def bfs(visited, graph, node):
+  visited.append(node)  #appending starting node
+  queue.append(node)
+
+  while queue:         #execute till the queue is not empty
+    s = queue.pop(0)   # remove the node at 0 index(fifo)
+    print (s, end = " ")  # printing bfs
+#check the neighbours and append them if not in visited
+    for neighbour in graph[s]:
+      if neighbour not in visited:
+        visited.append(neighbour)
+        queue.append(neighbour)
+
+#function calling
+bfs(visited, graph, '1')
